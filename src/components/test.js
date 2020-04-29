@@ -1,17 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {useState, useEffect} from 'react';
-import Search from '../Search/Search';
-import RecipeItem from '../RecipeItem/RecipeItem';
 
-function Recipes() {
+function Test() {
     const [recipes, setRecipes] = useState([]);
     const [searchString, setSearchString] = useState('chicken');
     const [lastSearch, setLastSearch] = useState('');
 
     useEffect(() => {
         getRecipes(searchString);
-        // const recipeString = JSON.stringify(recipes);
-        // localStorage.setItem('recipes', recipeString);
     }, []);
 
     function getRecipes(searchString) {
@@ -19,13 +15,9 @@ function Recipes() {
         fetch(url)
             .then((response) => response.json())
             .then((result) => {
-                if (result.meals && result.meals.length > 0) {
-                    setRecipes(result.meals);
-                    setLastSearch(searchString);
-                    setSearchString('');
-                } else {
-                    alert('No Results Found');
-                }
+                setRecipes(result.meals.splice(0, 9));
+                setLastSearch(searchString);
+                setSearchString('');
             })
             .catch(console.error);
     }
@@ -38,13 +30,11 @@ function Recipes() {
         event.preventDefault();
         getRecipes(searchString);
     }
-
     return (
         <div>
-            <Search handleChange={handleChange} handleSubmit={handleSubmit} searchString={searchString} />
-            <RecipeItem recipes={recipes} />
+            <h1>Hello</h1>
         </div>
     );
 }
 
-export default Recipes;
+export default Test;
