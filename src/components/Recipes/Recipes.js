@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {useState, useEffect} from 'react';
 import Search from '../Search/Search';
-import RecipeItem from '../RecipeItem/RecipeItem';
+import RecipeList from '../RecipeList/RecipeList';
 
 function Recipes() {
     const [recipes, setRecipes] = useState([]);
@@ -42,7 +42,7 @@ function Recipes() {
     return (
         <div>
             <Search handleChange={handleChange} handleSubmit={handleSubmit} searchString={searchString} />
-            <RecipeItem recipes={recipes} />
+            <RecipeList recipes={recipes} />
         </div>
     );
 }

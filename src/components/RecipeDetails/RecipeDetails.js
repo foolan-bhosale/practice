@@ -3,7 +3,7 @@ import VideoPlayer from '../Video/VideoPlayer';
 
 import './RecipeDetails.css';
 
-class Read extends Component {
+class RecipeDetails extends Component {
     state = {
         mealItem: {},
         ingredients: [],
@@ -27,7 +27,6 @@ class Read extends Component {
         const instructions = [];
         const splitInstructions = recipe['strInstructions'].split('.');
         splitInstructions.map((ins) => {
-            console.log(ins);
             return ins !== '' ? instructions.push(ins + '.\n') : '';
         });
         return instructions;
@@ -35,7 +34,7 @@ class Read extends Component {
 
     componentDidMount = async () => {
         const recipeId = this.props.match.params.recipeId;
-        console.log(recipeId);
+
         const url = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`);
         const response = await url.json();
         const meal = response.meals[0];
@@ -46,22 +45,17 @@ class Read extends Component {
             ingredients: ingredients,
             instructions: instructions
         });
-        console.log(this.state.mealItem);
-
-        console.log(ingredients);
-        console.log(instructions);
-        // console.log(response.meals[0]);
     };
 
     render() {
-        const {strMealThumb, strArea, strMeal, strTag, strYoutube} = this.state.mealItem;
+        const {strMealThumb, strMeal, strTag, strYoutube} = this.state.mealItem;
         console.log(this.props);
         return (
             <div className='container'>
                 <div className='row'>
                     <div className='col-md-8 col-12'>
                         <img
-                            className='img-thumbnail img-fluid w-75 h-75 p-2 d-block mb-2 '
+                            className='img-thumbnail img-fluid w-75 h-75 p-2 d-block mb-2'
                             src={strMealThumb}
                             alt={strMeal}
                         />
@@ -97,4 +91,4 @@ class Read extends Component {
     }
 }
 
-export default Read;
+export default RecipeDetails;
