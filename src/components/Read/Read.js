@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import VideoPlayer from '../Video/VideoPlayer';
 
+import './Read.css';
+
 class Read extends Component {
     state = {
         mealItem: {},
-        ingredients: []
+        ingredients: [],
+        instructions: []
     };
 
     setIngredients(recipe) {
@@ -20,6 +23,15 @@ class Read extends Component {
         return ingredients;
     }
 
+    setInstructions(recipe) {
+        const instructions = [];
+        const splitInstructions = recipe['strInstructions'].split('. ');
+        splitInstructions.map((i) => {
+            return instructions.push(i + '.\n');
+        });
+        return instructions;
+    }
+
     componentDidMount = async () => {
         const recipeId = this.props.location.state.recipeId;
         console.log(recipeId);
@@ -27,32 +39,47 @@ class Read extends Component {
         const response = await url.json();
         const meal = response.meals[0];
         const ingredients = this.setIngredients(meal);
+        const instructions = this.setInstructions(meal);
         this.setState({
             mealItem: meal,
-            ingredients: ingredients
+            ingredients: ingredients,
+            instructions: instructions
         });
         console.log(this.state.mealItem);
 
         console.log(ingredients);
+        console.log(instructions);
         // console.log(response.meals[0]);
     };
 
     render() {
-        const {strMealThumb, strInstructions, strArea, strMeal, strTag, strYoutube} = this.state.mealItem;
+        const {strMealThumb, strArea, strMeal, strTag, strYoutube} = this.state.mealItem;
         console.log(this.props);
         return (
-            <div>
-                <img src={strMealThumb} alt={strMeal} />
-                <h3>{strMeal}</h3>
-                <p>{strInstructions}</p>
-                <div>
-                    <ul>
-                        {this.state.ingredients.map((ing, index) => {
-                            return <li key={index}>{ing}</li>;
-                        })}
-                    </ul>
+            <div className='container'>
+                <div className='row'>
+                    <div className='col-md-8 col-12'>
+                        <img className='img-thumbnail img-fluid w-75 h-75 p-2 ' src={strMealThumb} alt={strMeal} />
+                    </div>
+
+                    <div className='col-md-4 col-12'>
+                        <h3>Ingredients: </h3>
+                        <ul>
+                            {this.state.ingredients.map((ing, index) => {
+                                return <li key={index}>{ing}</li>;
+                            })}
+                        </ul>
+                    </div>
+                    <div className='col-md-12'>
+                        <h3>{strMeal}</h3>
+                        <h4>Instructions: </h4>
+                        <ul>
+                            {this.state.instructions.map((ins, index) => {
+                                return <li key={index}>{ins}</li>;
+                            })}
+                        </ul>
+                    </div>
                 </div>
-                <VideoPlayer video={strYoutube} />
             </div>
         );
     }
