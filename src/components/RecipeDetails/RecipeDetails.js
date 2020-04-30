@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import VideoPlayer from '../Video/VideoPlayer';
 
-import './Read.css';
+import './RecipeDetails.css';
 
 class Read extends Component {
     state = {
@@ -25,15 +25,16 @@ class Read extends Component {
 
     setInstructions(recipe) {
         const instructions = [];
-        const splitInstructions = recipe['strInstructions'].split('. ');
-        splitInstructions.map((i) => {
-            return instructions.push(i + '.\n');
+        const splitInstructions = recipe['strInstructions'].split('.');
+        splitInstructions.map((ins) => {
+            console.log(ins);
+            return ins !== '' ? instructions.push(ins + '.\n') : '';
         });
         return instructions;
     }
 
     componentDidMount = async () => {
-        const recipeId = this.props.location.state.recipeId;
+        const recipeId = this.props.match.params.recipeId;
         console.log(recipeId);
         const url = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`);
         const response = await url.json();
@@ -59,7 +60,14 @@ class Read extends Component {
             <div className='container'>
                 <div className='row'>
                     <div className='col-md-8 col-12'>
-                        <img className='img-thumbnail img-fluid w-75 h-75 p-2 ' src={strMealThumb} alt={strMeal} />
+                        <img
+                            className='img-thumbnail img-fluid w-75 h-75 p-2 d-block mb-2 '
+                            src={strMealThumb}
+                            alt={strMeal}
+                        />
+                        <a href='#player' className='btn btn-primary'>
+                            Watch Video
+                        </a>
                     </div>
 
                     <div className='col-md-4 col-12'>
@@ -70,6 +78,7 @@ class Read extends Component {
                             })}
                         </ul>
                     </div>
+
                     <div className='col-md-12'>
                         <h3>{strMeal}</h3>
                         <h4>Instructions: </h4>
@@ -79,7 +88,9 @@ class Read extends Component {
                             })}
                         </ul>
                     </div>
-                    <VideoPlayer videoUrl={strYoutube} />
+                    <div className='col-md-12 d-flex justify-content-center' id='player'>
+                        <VideoPlayer videoUrl={strYoutube} />
+                    </div>
                 </div>
             </div>
         );

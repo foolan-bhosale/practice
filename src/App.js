@@ -4,22 +4,18 @@ import './App.css';
 import {Link, Route, Redirect} from 'react-router-dom';
 import Home from './components/Home/Home';
 import Recipes from './components/Recipes/Recipes';
-import Read from './components/Read/Read';
+import RecipeDetails from './components/RecipeDetails/RecipeDetails';
+import NavBar from './components/NavBar/NavBar';
 
 class App extends Component {
     render() {
         return (
             <div>
-                <nav>
-                    <Link to='/'>
-                        <h1>Home</h1>
-                    </Link>
-                    <Link to='/recipes'>Recipes</Link>
-                </nav>
+                <NavBar />
                 <main>
                     <Route path='/' exact={true} component={Home} />
                     <Route path='/recipes' exact component={Recipes} />
-                    <Route path='/recipes/:recipeId' component={Read} />
+                    <Route path='/recipes/:recipeId' component={RecipeDetails} />
                 </main>
             </div>
         );
