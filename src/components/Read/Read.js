@@ -79,6 +79,7 @@ class Read extends Component {
                             })}
                         </ul>
                     </div>
+                    <VideoPlayer videoUrl={strYoutube} />
                 </div>
             </div>
         );
