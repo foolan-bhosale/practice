@@ -74,11 +74,17 @@ class RecipeDetails extends Component {
                     </div>
 
                     <div className='col-md-12 shadow p-3 mb-5 bg-white rounded'>
-                        <h3>{strMeal}</h3>
+                        <h2 className='text-center' id='name'>
+                            {strMeal}
+                        </h2>
                         <h4>Instructions: </h4>
                         <ul>
                             {this.state.instructions.map((ins, index) => {
-                                return <li key={index}>{ins}</li>;
+                                return (
+                                    <li className='instruction' key={index}>
+                                        {ins}
+                                    </li>
+                                );
                             })}
                         </ul>
                     </div>

@@ -4,3 +4,16 @@
     font-family: 'Fredericka the Great', cursive;
     font-size: 1.5rem;
 }
+
+h4 {
+    font-family: 'Lexend Giga', sans-serif;
+}
+
+#name {
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.instruction {
+    font-family: 'Assistant', sans-serif;
+    font-size: 20px;
+}
