@@ -17,3 +17,8 @@ h4 {
     font-family: 'Assistant', sans-serif;
     font-size: 20px;
 }
+html {
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+}

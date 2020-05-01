@@ -18,13 +18,8 @@ function RecipeList(props) {
                                     <Card.Title>{recipe.strMeal}</Card.Title>
                                     <Card.Text>Recipe Origin: {recipe.strArea}</Card.Text>
 
-                                    <Link
-                                        to={{
-                                            pathname: `/recipes/${recipe.idMeal}`,
-                                            state: {recipeId: recipe.idMeal}
-                                        }}
-                                    >
-                                        <Button variant='primary'>View Recipe Details</Button>
+                                    <Link to={`/recipes/${recipe.idMeal}`} className='btn btn-primary'>
+                                        View Recipe Details
                                     </Link>
                                 </Card.Body>
                             </Card>

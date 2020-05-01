@@ -1,41 +1,24 @@
 import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
-import Image1 from '../../assets/images/image1.jpg';
-import Image2 from '../../assets/images/image2.jpg';
-import Image4 from '../../assets/images/image4.jpg';
 
+import recipe from '../../assets/images/recipe.jpg';
 
 import './Home.css';
 
 function Home() {
     return (
-        <>
         <div className='home-carousel'>
-           
-            <Carousel interval={4000}>
-                <Carousel.Item>
-                    <img className='d-block w-100'  src={Image1} alt='First slide' />
-                    <Carousel.Caption id='text'>
-                        <h3>yummy Town This is a wider card with supporting text below as a natural lead-in to additional content. This
-                    content is a little bit longer.</h3>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img className='d-block w-100 align-items-center' src={Image2} alt='Second slide' />
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img className='d-block w-100'  src={Image4} alt='Third slide' />
-
-                    <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            </Carousel>
-            
-           
+            <div className='card bg-dark text-white'>
+                <img src={recipe} className='card-img' alt='recipe-img' height={'500px'} />
+                <div className='card-img-overlay'>
+                    <h5 className='card-title'>Card title</h5>
+                    <p className='card-text'>
+                        This is a wider card with supporting text below as a natural lead-in to additional content. This
+                        content is a little bit longer.
+                    </p>
+                    <p className='card-text'>Last updated 3 mins ago</p>
+                </div>
+            </div>
         </div>
-        
-         </>
     );
 }
 

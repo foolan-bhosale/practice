@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import VideoPlayer from '../Video/VideoPlayer';
 
+import VideoModal from './Modals';
 import './RecipeDetails.css';
 
 class RecipeDetails extends Component {
@@ -9,6 +9,12 @@ class RecipeDetails extends Component {
         ingredients: [],
         instructions: []
     };
+
+    componentDidUpdate(prevProps) {
+        if (this.props.location.pathname !== prevProps.location.pathname) {
+            window.scrollTo(0, 0);
+        }
+    }
 
     setIngredients(recipe) {
         const ingredients = [];
@@ -27,7 +33,7 @@ class RecipeDetails extends Component {
         const instructions = [];
         const splitInstructions = recipe['strInstructions'].split('.');
         splitInstructions.map((ins) => {
-            return ins !== '' ? instructions.push(ins + '.\n') : '';
+            return ins !== '' ? instructions.push(ins + '\n') : '';
         });
         return instructions;
     }
@@ -51,7 +57,7 @@ class RecipeDetails extends Component {
         const {strMealThumb, strMeal, strTag, strYoutube} = this.state.mealItem;
         console.log(this.props);
         return (
-            <div className='container'>
+            <div className='container recipe-details'>
                 <div className='row'>
                     <div className='col-md-8  col-12'>
                         <img
@@ -59,9 +65,11 @@ class RecipeDetails extends Component {
                             src={strMealThumb}
                             alt={strMeal}
                         />
-                        <a href='#player' className='btn btn-primary'>
-                            Watch Video
-                        </a>
+                        {strYoutube ? (
+                            <VideoModal strYoutube={strYoutube} />
+                        ) : (
+                            <p className='btn btn-danger'>Video not available</p>
+                        )}
                     </div>
 
                     <div className='col-md-4 col-12 shadow-lg p-3 mb-5 bg-white rounded' id='background-color'>
@@ -87,12 +95,6 @@ class RecipeDetails extends Component {
                                 );
                             })}
                         </ul>
-                    </div>
-                    <div
-                        className='col-md-12 d-flex justify-content-center shadow p-3 mb-5 bg-white rounded '
-                        id='player'
-                    >
-                        <VideoPlayer videoUrl={strYoutube} />
                     </div>
                 </div>
             </div>

@@ -9,3 +9,41 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+.modal-dialog{
+    max-width: 80vw !important;
+
+}
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25% ;
+}
+ 
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    position: absolute;
+    top:0;
+    right:0;
+    z-index: 10000;
+    
+}
+
+.modal-header .close{
+    background-color: red;
+    padding: 0 !important;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
