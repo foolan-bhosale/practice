@@ -1,4 +1,9 @@
-#text{
+#text {
     font-size: 100px;
     color: Red;
+}
+
+.home-carousel {
+    position: absolute;
+    top: 0;
 }

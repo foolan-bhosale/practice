@@ -24,7 +24,7 @@ function Recipes() {
                     setLastSearch(searchString);
                     setSearchString('');
                 } else {
-                    alert('No Results Found');
+                    alert('Recipe not found');
                 }
             })
             .catch(console.error);

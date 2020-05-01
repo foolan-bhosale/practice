@@ -1,11 +1,12 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import './NavBar.css';
 
 function NavBar() {
     return (
-        <div>
-            <Navbar bg='light' expand='lg'>
+        <div className='recipe-nav container'>
+            <Navbar expand='lg'>
                 <Navbar.Brand href='/'>Yummy Town</Navbar.Brand>
                 <Navbar.Toggle aria-controls='basic-navbar-nav' />
                 <Navbar.Collapse id='basic-navbar-nav'>
