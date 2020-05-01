@@ -53,7 +53,7 @@ class RecipeDetails extends Component {
         return (
             <div className='container'>
                 <div className='row'>
-                    <div className='col-md-8 col-12'>
+                    <div className='col-md-8  col-12'>
                         <img
                             className='img-thumbnail img-fluid w-75 h-75 p-2 d-block mb-2'
                             src={strMealThumb}
@@ -64,7 +64,7 @@ class RecipeDetails extends Component {
                         </a>
                     </div>
 
-                    <div className='col-md-4 col-12'>
+                    <div className='col-md-4 col-12 shadow-lg p-3 mb-5 bg-white rounded' id='background-color'>
                         <h3>Ingredients: </h3>
                         <ul>
                             {this.state.ingredients.map((ing, index) => {
@@ -73,7 +73,7 @@ class RecipeDetails extends Component {
                         </ul>
                     </div>
 
-                    <div className='col-md-12'>
+                    <div className='col-md-12 shadow p-3 mb-5 bg-white rounded'>
                         <h3>{strMeal}</h3>
                         <h4>Instructions: </h4>
                         <ul>
@@ -82,7 +82,10 @@ class RecipeDetails extends Component {
                             })}
                         </ul>
                     </div>
-                    <div className='col-md-12 d-flex justify-content-center' id='player'>
+                    <div
+                        className='col-md-12 d-flex justify-content-center shadow p-3 mb-5 bg-white rounded '
+                        id='player'
+                    >
                         <VideoPlayer videoUrl={strYoutube} />
                     </div>
                 </div>

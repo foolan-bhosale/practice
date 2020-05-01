@@ -12,6 +12,7 @@ class App extends Component {
         return (
             <div className='app-container'>
                 <NavBar />
+
                 <main>
                     <Route path='/' exact={true} component={Home} />
                     <Route path='/recipes' exact component={Recipes} />
