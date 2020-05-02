@@ -7,3 +7,29 @@
     border-radius: 0;
     margin-top: 20px;
 } */
+
+.navbar-light .navbar-brand {
+    color: #f39c12;
+    font-family: 'Fredericka the Great', bold;
+    font-size: 2rem;
+}
+
+.navbar {
+    background-color: #34495e;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: azure;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #f39c12;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.navbar-light .navbar-brand:hover {
+    color: #f4d03f;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #f4d03f;
+}

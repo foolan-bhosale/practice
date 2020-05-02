@@ -6,23 +6,22 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-html {
+/* html {
     scroll-behavior: smooth;
-}
+} */
 
-.modal-dialog{
+.modal-dialog {
     max-width: 80vw !important;
-
 }
 .player-wrapper {
-  position: relative;
-  padding-top: 56.25% ;
+    position: relative;
+    padding-top: 56.25%;
 }
- 
+
 .react-player {
-  position: absolute;
-  top: 0;
-  left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .modal-header {
     display: flex;
@@ -31,13 +30,12 @@ html {
     background-color: transparent !important;
     border-color: transparent !important;
     position: absolute;
-    top:0;
-    right:0;
+    top: 0;
+    right: 0;
     z-index: 10000;
-    
 }
 
-.modal-header .close{
+.modal-header .close {
     background-color: red;
     padding: 0 !important;
     border-radius: 50%;

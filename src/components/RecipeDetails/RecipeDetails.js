@@ -61,7 +61,7 @@ class RecipeDetails extends Component {
                 <div className='row'>
                     <div className='col-md-8  col-12'>
                         <img
-                            className='img-thumbnail img-fluid w-75 h-75 p-2 d-block mb-2'
+                            className='img-thumbnail img-fluid w-75 h-75 p-2 d-block mb-2 mt-5'
                             src={strMealThumb}
                             alt={strMeal}
                         />
@@ -72,7 +72,7 @@ class RecipeDetails extends Component {
                         )}
                     </div>
 
-                    <div className='col-md-4 col-12 shadow-lg p-3 mb-5 bg-white rounded' id='background-color'>
+                    <div className='col-md-4 col-12 shadow-lg p-3 mb-5 bg-white rounded mt-5' id='background-color'>
                         <h3>Ingredients: </h3>
                         <ul>
                             {this.state.ingredients.map((ing, index) => {

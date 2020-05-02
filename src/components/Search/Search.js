@@ -3,17 +3,19 @@ import React from 'react';
 function Search(props) {
     const {handleSubmit, handleChange, searchString} = props;
     return (
-        <form onSubmit={handleSubmit} className='mb-3 text-center' style={{outline: 'none'}}>
+        <form onSubmit={handleSubmit} className='mb-5 mt-4 w-75 ml-5 input-group'>
             <input
                 type='text'
                 name='searchString'
-                placeholder='search'
+                placeholder='Recipe Name'
                 required
                 onChange={handleChange}
                 value={searchString}
-                style={{border: 0, borderBottom: 'solid 2px #1F09df', background: 'transparent'}}
+                className='form-control'
             />
-            <button>Search</button>
+            <div class='input-group-prepend mr-5'>
+                <button class='btn btn-primary'>Search</button>
+            </div>
         </form>
     );
 }
