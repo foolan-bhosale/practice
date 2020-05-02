@@ -1,0 +1,10 @@
+.footer {
+    background-color: #34495e;
+    color: #f39c12;
+    font-family: 'Fredericka the Great', cursive;
+    position: absolute;
+    width: 100%;
+}
+footer > p {
+    text-align: center;
+}
