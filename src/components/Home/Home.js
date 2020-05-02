@@ -1,22 +1,24 @@
 import React from 'react';
 
-import recipe from '../../assets/images/recipe.jpg';
+import home from '../../assets/images/home.jpeg';
 
 import './Home.css';
 
 function Home() {
     return (
-        <div className='home-carousel'>
-            <div className='card bg-dark text-white'>
-                <img src={recipe} className='card-img' alt='recipe-img' height={'500px'} />
-                <div className='card-img-overlay'>
-                    <h5 className='card-title'>Card title</h5>
-                    <p className='card-text'>
-                        This is a wider card with supporting text below as a natural lead-in to additional content. This
-                        content is a little bit longer.
+        <div className='container'>
+            <div className='container col-12'>
+                <img src={home} alt='image' className='img-fluid h-auto' />
+                <div className='position-absolute card-img-overlay'>
+                    <p className='text-white text-center'>
+                        What is the recipe for successful achievement? Choose a career you love. Give it the best there
+                        is in you. Seize your opportunities. And be a member of the team.<br />
+                        <strong className='text-info'>-Benjamin Franklin</strong>
                     </p>
-                    <p className='card-text'>Last updated 3 mins ago</p>
                 </div>
+            </div>
+            <div className='col-md-12 mt-5'>
+                <h1 className='text-center'>Our Recipes, Our Lives</h1>
             </div>
         </div>
     );

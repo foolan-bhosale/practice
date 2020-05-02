@@ -1,9 +1,7 @@
-#text {
-    font-size: 100px;
-    color: Red;
+h1 {
+    font-family: 'Patrick Hand', bold;
+    letter-spacing: 1rem;
 }
-
-/* .home-carousel {
-    position: absolute;
-    top: 0;
-} */
+p {
+    font-family: 'Roboto Mono', monospace;
+}

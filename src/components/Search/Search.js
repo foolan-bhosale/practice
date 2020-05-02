@@ -3,7 +3,10 @@ import React from 'react';
 function Search(props) {
     const {handleSubmit, handleChange, searchString} = props;
     return (
-        <form onSubmit={handleSubmit} className='mb-5 mt-4 w-75 ml-5 input-group'>
+        <form
+            onSubmit={handleSubmit}
+            className='mb-5 mt-4 ml-1 input-group justify-content-center d-flex align-items-center'
+        >
             <input
                 type='text'
                 name='searchString'
