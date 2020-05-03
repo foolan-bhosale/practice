@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import VideoModal from './Modals';
 import './RecipeDetails.css';
+import Footer from '../Footer/Footer';
 
 class RecipeDetails extends Component {
     state = {
@@ -54,12 +55,14 @@ class RecipeDetails extends Component {
     };
 
     render() {
-        const {strMealThumb, strMeal, strTag, strYoutube} = this.state.mealItem;
-        console.log(this.props);
+        const {strMealThumb, strMeal, strYoutube} = this.state.mealItem;
+       
         return (
+            <>
             <div className='container recipe-details'>
                 <div className='row'>
                     <div className='col-md-8  col-12'>
+                      
                         <img
                             className='img-thumbnail img-fluid w-75 h-75 p-2 d-block mb-2 mt-5'
                             src={strMealThumb}
@@ -70,6 +73,8 @@ class RecipeDetails extends Component {
                         ) : (
                             <p className='btn btn-danger'>Video not available</p>
                         )}
+
+                        
                     </div>
 
                     <div className='col-md-4 col-12 shadow-lg p-3 mb-5 bg-white rounded mt-5' id='background-color'>
@@ -97,7 +102,10 @@ class RecipeDetails extends Component {
                         </ul>
                     </div>
                 </div>
+                
             </div>
+            {this.state.mealItem.strMeal ? <Footer /> : null}
+            </>
         );
     }
 }

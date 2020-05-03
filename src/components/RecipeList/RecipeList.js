@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -16,7 +16,9 @@ function RecipeList(props) {
                                 <Card.Img variant='top' src={recipe.strMealThumb} alt={recipe.strMeal} />
                                 <Card.Body>
                                     <Card.Title>{recipe.strMeal}</Card.Title>
-                                    <Card.Text>Recipe Origin: {recipe.strArea}</Card.Text>
+                                    <Card.Text>
+                                        Cuisine:<strong className='strong-text'>{recipe.strArea}</strong>{' '}
+                                    </Card.Text>
 
                                     <Link to={`/recipes/${recipe.idMeal}`} className='btn btn-primary'>
                                         View Recipe Details

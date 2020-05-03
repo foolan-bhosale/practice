@@ -45,3 +45,12 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.strong-text {
+    color: #138d75;
+    text-transform: uppercase;
+}
+
+.strong-text:hover {
+    color: #e74c3c;
+}

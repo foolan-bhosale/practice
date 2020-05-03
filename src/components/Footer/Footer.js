@@ -3,7 +3,7 @@ import '../Footer/Footer.css';
 
 function Footer() {
     return (
-        <footer className='mt-2 p-2 footer'>
+        <footer className='mt-2 pt-3 text-center footer'>
             <p>Copyright ©2020 - Foolan Bhosale</p>
         </footer>
     );

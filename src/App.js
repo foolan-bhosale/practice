@@ -6,12 +6,11 @@ import Home from './components/Home/Home';
 import Recipes from './components/Recipes/Recipes';
 import RecipeDetails from './components/RecipeDetails/RecipeDetails';
 import NavBar from './components/NavBar/NavBar';
-import Footer from './components/Footer/Footer';
 
 class App extends Component {
     render() {
         return (
-            <div className='app-container'>
+            <div>
                 <NavBar />
 
                 <main>
@@ -19,7 +18,6 @@ class App extends Component {
                     <Route path='/recipes' exact component={Recipes} />
                     <Route path='/recipes/:recipeId' exact component={RecipeDetails} />
                 </main>
-                <Footer />
             </div>
         );
     }

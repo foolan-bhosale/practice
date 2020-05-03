@@ -16,8 +16,8 @@ function Search(props) {
                 value={searchString}
                 className='form-control'
             />
-            <div class='input-group-prepend mr-5'>
-                <button class='btn btn-primary'>Search</button>
+            <div className='input-group-prepend mr-5'>
+                <button className='btn btn-primary'>Search</button>
             </div>
         </form>
     );
