@@ -23,6 +23,7 @@ function Recipes() {
                     setSearchString('');
                 } else {
                     alert('Recipe not found');
+                    setSearchString('');
                 }
             })
             .catch(console.error);

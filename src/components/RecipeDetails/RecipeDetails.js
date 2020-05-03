@@ -61,7 +61,7 @@ class RecipeDetails extends Component {
             <>
             <div className='container recipe-details'>
                 <div className='row'>
-                    <div className='col-md-8  col-12'>
+                    <section className='col-md-8  col-12'>
                       
                         <img
                             className='img-thumbnail img-fluid w-75 h-75 p-2 d-block mb-2 mt-5'
@@ -75,18 +75,18 @@ class RecipeDetails extends Component {
                         )}
 
                         
-                    </div>
+                    </section>
 
-                    <div className='col-md-4 col-12 shadow-lg p-3 mb-5 bg-white rounded mt-5' id='background-color'>
-                        <h3>Ingredients: </h3>
+                    <section className='col-md-4 col-12 shadow-lg p-3 mb-5 bg-white rounded mt-5' id='background-color'>
+                        <h3>Ingredients<strong> :</strong> </h3>
                         <ul>
                             {this.state.ingredients.map((ing, index) => {
                                 return <li key={index}>{ing}</li>;
                             })}
                         </ul>
-                    </div>
+                    </section>
 
-                    <div className='col-md-12 shadow p-3 mb-5 bg-white rounded'>
+                    <section className='col-md-12 shadow p-3 mb-5 bg-white rounded'>
                         <h2 className='text-center' id='name'>
                             {strMeal}
                         </h2>
@@ -100,7 +100,7 @@ class RecipeDetails extends Component {
                                 );
                             })}
                         </ul>
-                    </div>
+                    </section>
                 </div>
                 
             </div>
