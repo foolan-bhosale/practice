@@ -5,13 +5,13 @@ An application for International recipes.
 It is a single page application using React and React-router-dom that fetches all the recipes using few API end points. It also allows users to drill down on a specific recipe to learn about the cooking instructions and also users can watch video. 
 
 Home Page
-![Home](images/homePage.jpg)
+![Home](images/homePage.png)
 
 Recipe Page
-![recipes](images/recipes.jpg)
+![recipes](images/recipes.png)
 
 RecipeId page
-![recipeIdPage](images/recipesId.jpg)
+![recipeIdPage](images/recipesId.png)
 
 
 ### Technologies Used
