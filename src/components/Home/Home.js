@@ -10,7 +10,7 @@ import './Home.css';
 function Home() {
     return (
         <>
-        <div className='container'>
+        <div className='container mb-5'>
             <section className='container col-12'>
                 <img src={home} alt='salad' className='img-fluid h-auto' />
                 <div className='position-absolute card-img-overlay'>
@@ -18,7 +18,7 @@ function Home() {
                 </div>
             </section>
 
-            <section className='intro'>
+            <section>
                 <div className='container'>
                     <div className='row'>
                         <div className='col-md-6 col-12 align-self-center mt-5'>
@@ -34,14 +34,14 @@ function Home() {
                     </div>
                 </div>
             </section>
-            <section className='intro'>
+            <section>
                 <div className='container'>
                     <div className='row'>
                         <div className='col-md-6 mt-5 col-12 align-self-center'>
                             <h1 className='text-dark home-container'>Discover the flavours of the food</h1>
                         </div>
                         <div className='col-md-6 col-12 align-self-center mt-5'>
-                            <div>
+                            <div >
                                 <img src={world} className='img-fluid' alt='ingredients' />
                             </div>
                         </div>

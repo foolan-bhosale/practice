@@ -39,7 +39,7 @@ function Recipes() {
     }
 
     return (
-        <div>
+        <div className='mb-5'>
             <Search handleChange={handleChange} handleSubmit={handleSubmit} searchString={searchString} />
             <RecipeList recipes={recipes} />
             {recipes.length > 0 ? <Footer /> : null}
