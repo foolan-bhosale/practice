@@ -18,8 +18,8 @@ function Home() {
                 </div>
             </section>
 
-            <section>
-                <div className='container'>
+            <section className='container'>
+               
                     <div className='row'>
                         <div className='col-md-6 col-12 align-self-center mt-5'>
                             <div>
@@ -32,7 +32,7 @@ function Home() {
                             <hr />
                         </div>
                     </div>
-                </div>
+                
             </section>
             <section>
                 <div className='container'>
